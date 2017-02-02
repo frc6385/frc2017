@@ -10,12 +10,20 @@ namespace FRC2017i{
 		const string customAuto="My Auto";
 		string autoSelected;
 		SendableChooser chooser;
-		
+		// init Joystick
+		Joystick joystickDriving;
+		drivingControl driveCtl;
+
 		public override void RobotInit(){
+			Console.WriteLine("Hello, FRC2017!");
+			Console.WriteLine("TrueMoe RobotCode 2017i");
 			chooser=new SendableChooser();
 			chooser.AddDefault("Default Auto",defaultAuto);
 			chooser.AddObject("My Auto",customAuto);
 			SmartDashboard.PutData("Chooser",chooser);
+
+			joystickDriving=new Joystick(RobotMap.joystickDriving);
+			driveCtl=new drivingControl();
 		}
 
 		// This autonomous (along with the sendable chooser above) shows how to select between
@@ -48,11 +56,9 @@ namespace FRC2017i{
 		}
 		
 		public override void TeleopPeriodic(){
-
-		}
-		
-		public override void TestPeriodic(){
-
+			double x=joystickDriving.GetRawAxis(RobotMap.joystickDrivingLeverX);
+			double y=joystickDriving.GetRawAxis(RobotMap.joystickDrivingLeverY);
+			Console.WriteLine("X:"+x.ToString()+"  Y:"+y.ToString());
 		}
 	}
 }
