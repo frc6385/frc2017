@@ -6,13 +6,10 @@
 using System.Reflection;
 using WPILib;
 
-namespace FRC2017i
-{
-	public class Program
-	{
-		static void Main()
-		{
-			RobotBase.Main(null, typeof(FRC2017i));
+namespace FRC2017i{
+	public class Program{
+		static void Main(){
+			RobotBase.Main(null,typeof(FRC2017i));
 		}
 	}
 }
