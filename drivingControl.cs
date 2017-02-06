@@ -7,7 +7,7 @@ using WPILib;
 
 namespace FRC2017i{
 	class drivingControl{
-		// init VistotSP
+		// init VictorSP
 		VictorSP motorFrontLeft;
 		VictorSP motorFrontRight;
 		VictorSP motorRearLeft;
