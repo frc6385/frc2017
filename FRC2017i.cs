@@ -49,12 +49,12 @@ namespace FRC2017i{
 		public override void TeleopPeriodic(){
 			driveCtl.arcadeDrive(-1*opIf.readAxis(RobotMap.joystickDrivingLeverX,"drive")*RobotMap.drivingSpeedConstant,opIf.readAxis(RobotMap.joystickDrivingLeverY,"drive")*RobotMap.drivingSpeedConstant,RobotMap.drivingSquaredInput);
 			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive")>0.02){
-				operateCtl.readyBall(1,opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive"));
+				operateCtl.readyBall(1,opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive")*RobotMap.ballReadySpeedConstant);
 			}else{
 				operateCtl.readyBall(1,0);
 			}
 			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive")>0.02){
-				operateCtl.readyBall(-1,opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive"));
+				operateCtl.readyBall(-1,opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive")*RobotMap.ballReadySpeedConstant);
 			}else{
 				operateCtl.readyBall(-1,0);
 			}

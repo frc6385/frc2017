@@ -18,7 +18,10 @@ namespace FRC2017i{
 
 		/* Driving Definition */
 		public static bool drivingSquaredInput=true;
+
+		/* Constant Definition */
 		public static double drivingSpeedConstant=0.6;
+		public static double ballReadySpeedConstant=0.7;
 
 		/* Joystick Port Definition */
 		public static int joystickDriving=0;
