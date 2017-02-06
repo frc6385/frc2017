@@ -12,7 +12,7 @@ namespace FRC2017i{
 		SendableChooser chooser;
 		// init custom classes
 		drivingControl driveCtl;
-		operatingControl stickRead;
+		operatorInterface stickRead;
 
 		public override void RobotInit(){
 			Console.WriteLine("Hello, FRC2017!");
@@ -23,7 +23,7 @@ namespace FRC2017i{
 			SmartDashboard.PutData("Chooser",chooser);
 
 			driveCtl=new drivingControl();
-			stickRead=new operatingControl();
+			stickRead=new operatorInterface();
 		}
 		
 		public override void AutonomousInit(){

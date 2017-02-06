@@ -26,6 +26,7 @@ namespace FRC2017i{
 		public static int joystickDrivingCounterClockwise=3;
 		/* Joystick Button Binding Definition */
 		public static int joystickDrivingStopAll=3;
-		public static int joystickDriving
+		public static int joystickDrivingBallReadyClockwise=5;
+		public static int joystickDrivingBallReadyCounterClockwise=6;
 	}
 }

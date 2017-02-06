@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using WPILib;
 
 namespace FRC2017i{
-	class operatingControl{
+	class operatorInterface{
 		// init Joysticks
 		Joystick driving;
 
-		public operatingControl(){
+		public operatorInterface(){
 			driving=new Joystick(RobotMap.joystickDriving);
 		}
 		
