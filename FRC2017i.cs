@@ -12,7 +12,8 @@ namespace FRC2017i{
 		SendableChooser chooser;
 		// init custom classes
 		drivingControl driveCtl;
-		operatorInterface stickRead;
+		operatingControl operateCtl;
+		operatorInterface opIf;
 
 		public override void RobotInit(){
 			Console.WriteLine("Hello, FRC2017!");
@@ -23,7 +24,8 @@ namespace FRC2017i{
 			SmartDashboard.PutData("Chooser",chooser);
 
 			driveCtl=new drivingControl();
-			stickRead=new operatorInterface();
+			operateCtl=new operatingControl();
+			opIf=new operatorInterface();
 		}
 		
 		public override void AutonomousInit(){
@@ -45,7 +47,20 @@ namespace FRC2017i{
 		}
 		
 		public override void TeleopPeriodic(){
-			driveCtl.arcadeDrive(-1*stickRead.readAxis(RobotMap.joystickDrivingLeverX,"drive")*RobotMap.drivingSpeedConstant,stickRead.readAxis(RobotMap.joystickDrivingLeverY,"drive")*RobotMap.drivingSpeedConstant,RobotMap.drivingSquaredInput);
+			driveCtl.arcadeDrive(-1*opIf.readAxis(RobotMap.joystickDrivingLeverX,"drive")*RobotMap.drivingSpeedConstant,opIf.readAxis(RobotMap.joystickDrivingLeverY,"drive")*RobotMap.drivingSpeedConstant,RobotMap.drivingSquaredInput);
+			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive")>0.02){
+				operateCtl.readyBall(1,opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive"));
+			}else{
+				operateCtl.readyBall(1,0);
+			}
+			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive")>0.02){
+				operateCtl.readyBall(-1,opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive"));
+			}else{
+				operateCtl.readyBall(-1,0);
+			}
+			if(opIf.readButton(RobotMap.joystickDrivingBallShoot,"drive")){
+				operateCtl.shootBall(1);
+			}
 		}
 	}
 }

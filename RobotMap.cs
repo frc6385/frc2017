@@ -9,11 +9,14 @@ namespace FRC2017i{
 			  Left3          Right1
 			  ========REAR=========
 		*/
-		/* Driving Definition */
 		public static int motorFrontLeft=4;
 		public static int motorRearLeft=3;
 		public static int motorFrontRight=2;
 		public static int motorRearRight=1;
+		public static int motorBallReady=6;
+		public static int motorBallShoot=5;
+
+		/* Driving Definition */
 		public static bool drivingSquaredInput=true;
 		public static double drivingSpeedConstant=0.6;
 
@@ -22,11 +25,10 @@ namespace FRC2017i{
 		/* Joystick Axis Binding Definition */
 		public static int joystickDrivingLeverX=0;
 		public static int joystickDrivingLeverY=1;
-		public static int joystickDrivingClockwise=2;
-		public static int joystickDrivingCounterClockwise=3;
+		public static int joystickDrivingBallReadyClockwise=2;
+		public static int joystickDrivingBallReadyCounterClockwise=3;
 		/* Joystick Button Binding Definition */
 		public static int joystickDrivingStopAll=3;
-		public static int joystickDrivingBallReadyClockwise=5;
-		public static int joystickDrivingBallReadyCounterClockwise=6;
+		public static int joystickDrivingBallShoot=2;
 	}
 }

@@ -76,8 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="operatorInterface.cs" />
     <Compile Include="drivingControl.cs" />
+    <Compile Include="operatingControl.cs" />
+    <Compile Include="operatorInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="FRC2017i.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

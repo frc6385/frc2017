@@ -35,12 +35,12 @@ namespace FRC2017i{
 		public void drivingMotorControlRaw(string where,double value){
 			switch(where){
 				case "left":
-					motorFrontLeft.SetRaw((int)(value*2000));
-					motorRearLeft.SetRaw((int)(value*2000));
+					motorFrontLeft.SetSpeed(value);
+					motorRearLeft.SetSpeed(value);
 					break;
 				case "right":
-					motorFrontRight.SetRaw((int)(value*2000));
-					motorRearRight.SetRaw((int)(value*2000));
+					motorFrontRight.SetSpeed(value);
+					motorRearRight.SetSpeed(value);
 					break;
 				default:
 					Console.WriteLine("no method for "+where);
