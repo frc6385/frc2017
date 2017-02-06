@@ -25,11 +25,31 @@ namespace FRC2017i{
 		}
 
 		public void resetMotors(){
+			motorFrontLeft.StopMotor();
+			motorFrontRight.StopMotor();
+			motorRearLeft.StopMotor();
+			motorRearRight.StopMotor();
 			drive.StopMotor();
 		}
 
+		public void drivingMotorControlRaw(string where,double value){
+			switch(where){
+				case "left":
+					motorFrontLeft.SetRaw((int)(value*2000));
+					motorRearLeft.SetRaw((int)(value*2000));
+					break;
+				case "right":
+					motorFrontRight.SetRaw((int)(value*2000));
+					motorRearRight.SetRaw((int)(value*2000));
+					break;
+				default:
+					Console.WriteLine("no method for "+where);
+					break;
+			}
+		}
+
 		public void arcadeDrive(double x,double y,bool squared){
-			drive.ArcadeDrive(x,y,squared);
+			drive.ArcadeDrive(y,x,squared);
 		}
 	}
 }

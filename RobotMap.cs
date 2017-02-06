@@ -15,7 +15,7 @@ namespace FRC2017i{
 		public static int motorFrontRight=2;
 		public static int motorRearRight=1;
 		public static bool drivingSquaredInput=true;
-		public static double drivingSpeedConstant=1.00;
+		public static double drivingSpeedConstant=0.6;
 
 		/* Joystick Port Definition */
 		public static int joystickDriving=0;
@@ -26,5 +26,6 @@ namespace FRC2017i{
 		public static int joystickDrivingCounterClockwise=3;
 		/* Joystick Button Binding Definition */
 		public static int joystickDrivingStopAll=3;
+		public static int joystickDriving
 	}
 }

@@ -10,9 +10,9 @@ namespace FRC2017i{
 		const string customAuto="My Auto";
 		string autoSelected;
 		SendableChooser chooser;
-		// init Joystick
-		Joystick joystickDriving;
+		// init custom classes
 		drivingControl driveCtl;
+		operatingControl stickRead;
 
 		public override void RobotInit(){
 			Console.WriteLine("Hello, FRC2017!");
@@ -22,8 +22,8 @@ namespace FRC2017i{
 			chooser.AddObject("My Auto",customAuto);
 			SmartDashboard.PutData("Chooser",chooser);
 
-			joystickDriving=new Joystick(RobotMap.joystickDriving);
 			driveCtl=new drivingControl();
+			stickRead=new operatingControl();
 		}
 		
 		public override void AutonomousInit(){
@@ -45,9 +45,7 @@ namespace FRC2017i{
 		}
 		
 		public override void TeleopPeriodic(){
-			double x=joystickDriving.GetRawAxis(RobotMap.joystickDrivingLeverX);
-			double y=joystickDriving.GetRawAxis(RobotMap.joystickDrivingLeverY);
-			Console.WriteLine("X:"+x.ToString()+"  Y:"+y.ToString());
+			driveCtl.arcadeDrive(-1*stickRead.readAxis(RobotMap.joystickDrivingLeverX,"drive")*RobotMap.drivingSpeedConstant,stickRead.readAxis(RobotMap.joystickDrivingLeverY,"drive")*RobotMap.drivingSpeedConstant,RobotMap.drivingSquaredInput);
 		}
 	}
 }
