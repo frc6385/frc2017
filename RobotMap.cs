@@ -15,13 +15,16 @@ namespace FRC2017i{
 		public static int motorRearRight=1;
 		public static int motorBallReady=6;
 		public static int motorBallShoot=5;
+		public static int motorRobotClimb=7;
 
 		/* Driving Definition */
 		public static bool drivingSquaredInput=true;
 
 		/* Constant Definition */
-		public static double drivingSpeedConstant=0.6;
-		public static double ballReadySpeedConstant=0.7;
+		public static double drivingSpeedConstant=1.0;
+		public static double ballReadySpeedConstant=0.5;
+		public static double ballShootSpeedConstant=1.0;
+		public static double robotClimbSpeedConstant=1.0;
 
 		/* Joystick Port Definition */
 		public static int joystickDriving=0;
@@ -33,5 +36,6 @@ namespace FRC2017i{
 		/* Joystick Button Binding Definition */
 		public static int joystickDrivingStopAll=3;
 		public static int joystickDrivingBallShoot=2;
+		public static int joystickDrivingRobotClimb=1;
 	}
 }
