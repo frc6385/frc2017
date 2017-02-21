@@ -63,10 +63,14 @@ namespace FRC2017i{
 			
 			if(opIf.readButton(RobotMap.joystickDrivingBallShoot,"drive")){
 				operateCtl.shootBall((double)(RobotMap.ballShootSpeedConstant*1.0));
+			}else{
+				operateCtl.shootBall(0.0);
 			}
 
 			if(opIf.readButton(RobotMap.joystickDrivingRobotClimb,"drive")){
 				operateCtl.robotClimb((double)(RobotMap.robotClimbSpeedConstant*1.0));
+			}else{
+				operateCtl.robotClimb(0.0);
 			}
 			
 			if(opIf.readButton(RobotMap.joystickDrivingStopAll,"drive")){
