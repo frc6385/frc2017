@@ -52,21 +52,21 @@ namespace FRC2017i{
 			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive")>0.02){
 				operateCtl.readyBall(1,opIf.readAxis(RobotMap.joystickDrivingBallReadyClockwise,"drive")*RobotMap.ballReadySpeedConstant);
 			}else{
-				operateCtl.readyBall(1,0);
+				operateCtl.readyBall(1,0.0);
 			}
 
 			if(opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive")>0.02){
 				operateCtl.readyBall(-1,opIf.readAxis(RobotMap.joystickDrivingBallReadyCounterClockwise,"drive")*RobotMap.ballReadySpeedConstant);
 			}else{
-				operateCtl.readyBall(-1,0);
+				operateCtl.readyBall(-1,0.0);
 			}
 			
 			if(opIf.readButton(RobotMap.joystickDrivingBallShoot,"drive")){
-				operateCtl.shootBall(RobotMap.ballShootSpeedConstant);
+				operateCtl.shootBall((double)(RobotMap.ballShootSpeedConstant*1.0));
 			}
 
 			if(opIf.readButton(RobotMap.joystickDrivingRobotClimb,"drive")){
-				operateCtl.robotClimb(RobotMap.robotClimbSpeedConstant);
+				operateCtl.robotClimb((double)(RobotMap.robotClimbSpeedConstant*1.0));
 			}
 			
 			if(opIf.readButton(RobotMap.joystickDrivingStopAll,"drive")){

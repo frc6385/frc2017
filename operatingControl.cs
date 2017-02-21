@@ -25,7 +25,7 @@ namespace FRC2017i{
 		}
 
 		public void readyBall(int clockwise,double value){
-			if((value<1.0) && (value>-1.0)){
+			if((value<=1.0) && (value>=-1.0)){
 				motorBallReady.SetSpeed(value*clockwise);
 			}else{
 				Console.WriteLine("INVALID value: "+value.ToString());
@@ -33,7 +33,7 @@ namespace FRC2017i{
 		}
 		
 		public void shootBall(double value){
-			if((value<1.0) && (value>-1.0)){
+			if((value<=1.0) && (value>=-1.0)){
 				motorBallShoot.SetSpeed(value);
 			}else{
 				Console.WriteLine("INVALID value: "+value.ToString());
@@ -41,7 +41,7 @@ namespace FRC2017i{
 		}
 
 		public void robotClimb(double value){
-			if((value<1.0) && (value>-1.0)){
+			if((value<=1.0) && (value>=-1.0)){
 				motorRobotClimb.SetSpeed(value);
 			}else{
 				Console.WriteLine("INVALID value: "+value.ToString());
