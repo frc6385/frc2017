@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSCore;
 using WPILib;
 using WPILib.SmartDashboard;
 
@@ -14,6 +15,9 @@ namespace FRC2017i{
 		drivingControl driveCtl;
 		operatingControl operateCtl;
 		operatorInterface opIf;
+		// init usb camera and mjpegServer
+		UsbCamera usbCamera;
+		MjpegServer mjpegServer;
 
 		public override void RobotInit(){
 			Console.WriteLine("Hello, FRC2017!");
@@ -22,6 +26,10 @@ namespace FRC2017i{
 			chooser.AddDefault("Default Auto",defaultAuto);
 			chooser.AddObject("My Auto",customAuto);
 			SmartDashboard.PutData("Chooser",chooser);
+
+			usbCamera=new UsbCamera("USB Camera 0",0);
+			mjpegServer=new MjpegServer("USB Camera 0 Server",1181);
+			mjpegServer.Source=usbCamera;
 
 			driveCtl=new drivingControl();
 			operateCtl=new operatingControl();
