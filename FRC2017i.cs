@@ -37,21 +37,13 @@ namespace FRC2017i{
 		}
 		
 		public override void AutonomousInit(){
-			autoSelected=(string)chooser.GetSelected();
-			//autoSelected = SmartDashboard.GetString("Auto Selector", defaultAuto);
-			Console.WriteLine("Auto selected: "+autoSelected);
+			driveCtl.controlForward(0.8);
+			System.Threading.Thread.Sleep(3000);
+			driveCtl.controlForward(0);
 		}
 		
 		public override void AutonomousPeriodic(){
-			switch(autoSelected){
-				case customAuto:
-					//Put custom auto code here
-					break;
-				case defaultAuto:
-				default:
-					//Put default auto code here
-					break;
-			}
+			
 		}
 		
 		public override void TeleopPeriodic(){

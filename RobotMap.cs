@@ -21,7 +21,7 @@ namespace FRC2017i{
 		public static bool drivingSquaredInput=true;
 
 		/* Constant Definition */
-		public static double drivingSpeedConstant=1.0;
+		public static double drivingSpeedConstant=0.8;
 		public static double ballReadySpeedConstant=0.5;
 		public static double ballShootSpeedConstant=1.0;
 		public static double robotClimbSpeedConstant=1.0;

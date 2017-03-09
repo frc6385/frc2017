@@ -16,12 +16,24 @@ namespace FRC2017i{
 		RobotDrive drive;
 
 		public drivingControl(){
+			motorFrontLeft.SafetyEnabled=false;
+			motorFrontRight.SafetyEnabled=false;
+			motorRearLeft.SafetyEnabled=false;
+			motorRearRight.SafetyEnabled=false;
 			motorFrontLeft=new VictorSP(RobotMap.motorFrontLeft);
 			motorFrontRight=new VictorSP(RobotMap.motorFrontRight);
 			motorRearLeft=new VictorSP(RobotMap.motorRearLeft);
 			motorRearRight=new VictorSP(RobotMap.motorRearRight);
 
+			drive.SafetyEnabled=false;
 			drive=new RobotDrive(motorFrontLeft,motorRearLeft,motorFrontRight,motorRearRight);
+		}
+
+		public void controlForward(double x){
+			motorFrontLeft.Set(x);
+			motorRearLeft.Set(x);
+			motorFrontRight.Set(x);
+			motorRearRight.Set(x);
 		}
 
 		public void resetMotors(){
