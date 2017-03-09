@@ -34,7 +34,7 @@ namespace FRC2017i{
 		
 		public void shootBall(double value){
 			if((value<=1.0) && (value>=-1.0)){
-				motorBallShoot.SetSpeed(value);
+				motorBallShoot.SetSpeed(-value);
 			}else{
 				Console.WriteLine("INVALID value: "+value.ToString());
 			}
